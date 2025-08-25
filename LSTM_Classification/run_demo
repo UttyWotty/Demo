@@ -1,0 +1,49 @@
+#!/usr/bin/env python3
+"""
+LSTM Production Pattern Classification Demo Runner
+
+Quick demo script to showcase the LSTM-based production pattern classification system.
+"""
+
+import sys
+import os
+from analyzer import LSTMProductionAnalyzer
+
+
+def main():
+    """Run the LSTM classification demo"""
+    print("🎯 LSTM Production Pattern Classification Demo")
+    print("=" * 50)
+    print("This demo showcases advanced machine learning techniques")
+    print("for manufacturing process optimization using LSTM neural networks.")
+    print()
+
+    try:
+        # Initialize analyzer
+        analyzer = LSTMProductionAnalyzer()
+
+        # Run complete demo
+        results = analyzer.run_demo_analysis(save_results=True)
+
+        print("\n" + "=" * 50)
+        print("🎉 Demo completed successfully!")
+        print("\n📊 Key Achievements:")
+        print("✓ Generated synthetic production data")
+        print("✓ Analyzed time-series patterns")
+        print("✓ Created comprehensive visualizations")
+        print("✓ Demonstrated LSTM model performance")
+        print("\n💡 This project demonstrates expertise in:")
+        print("• Deep Learning & Neural Networks")
+        print("• Time-Series Analysis")
+        print("• Industrial IoT Applications")
+        print("• Production Process Optimization")
+        print("• Advanced Data Visualization")
+
+    except Exception as e:
+        print(f"❌ Error running demo: {str(e)}")
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()
+
