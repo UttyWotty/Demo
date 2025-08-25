@@ -1,0 +1,37 @@
+from __future__ import annotations
+
+import os
+from pipeline.generate_demo import generate_master_shot_table_demo
+from analyzer import CTEfficiencyDemoAnalyzer
+
+
+def main() -> None:
+    """Run the CT efficiency benchmarking demo end-to-end."""
+    os.makedirs("data", exist_ok=True)
+
+    df = generate_master_shot_table_demo(
+        start_date="2025-01-01",
+        days=45,
+        suppliers=6,
+        tools_per_supplier=4,
+        tooling_families=3,
+        seed=42,
+    )
+
+    analyzer = CTEfficiencyDemoAnalyzer()
+    df = analyzer.prepare(df)
+    df = analyzer.compute_efficiency(df)
+    tool_metrics = analyzer.aggregate_per_tool(df)
+    tool_metrics = analyzer.normalize_within_family(tool_metrics)
+
+    benchmarks = analyzer.aggregate_supplier(tool_metrics)
+    plots = analyzer.create_plots(tool_metrics, benchmarks)
+    report = analyzer.create_report(tool_metrics, benchmarks, plots)
+
+    print("✅ Demo complete!")
+    print(f"Charts: {len(plots)} created under data/")
+    print(f"Report: {report}")
+
+
+if __name__ == "__main__":
+    main()
