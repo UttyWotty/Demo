@@ -1,0 +1,52 @@
+#!/usr/bin/env python3
+"""
+Data Pipeline & Engineering Demo Runner
+
+Quick demo script to showcase enterprise-scale data engineering capabilities.
+"""
+
+import sys
+import os
+from analyzer import DataPipelineAnalyzer
+
+
+def main():
+    """Run the data pipeline demo"""
+    print("🎯 Data Pipeline & Engineering Demo")
+    print("=" * 50)
+    print("This demo showcases enterprise-scale data engineering")
+    print("capabilities for manufacturing analytics platforms.")
+    print()
+
+    try:
+        # Initialize analyzer
+        analyzer = DataPipelineAnalyzer()
+
+        # Run complete demo
+        results = analyzer.run_demo_analysis(save_results=True)
+
+        print("\n" + "=" * 50)
+        print("Demo completed successfully!")
+        print("\n📊 Key Achievements:")
+        print("✓ Processed large-scale manufacturing data")
+        print("✓ Demonstrated high-performance pipelines")
+        print("✓ Showcased data quality management")
+        print("✓ Created comprehensive analytics")
+        print("✓ Generated performance visualizations")
+        print("\n💡 This project demonstrates expertise in:")
+        print("• Enterprise Data Engineering")
+        print("• High-Performance Data Processing")
+        print("• Cloud Data Warehousing (Snowflake)")
+        print("• Pipeline Architecture & Design")
+        print("• Data Quality & Governance")
+        print("• Performance Optimization")
+        print("• Scalable System Design")
+
+    except Exception as e:
+        print(f"❌ Error running demo: {str(e)}")
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()
+
