@@ -1,0 +1,20 @@
+from __future__ import annotations
+
+from pipeline.generate_demo import generate_rca_demo
+from analyzer import RCADemoAnalyzer
+
+
+def main() -> None:
+    """Run the RCA demo end-to-end."""
+    df = generate_rca_demo(
+        days=30, suppliers=3, equipment_per_supplier=4, parts=6, seed=42
+    )
+    analyzer = RCADemoAnalyzer(df)
+    results = analyzer.run(top_n=3)
+    report = analyzer.create_report(results)
+    print("✅ RCA demo complete!")
+    print(f"Saved five_whys_results.json and report at: {report}")
+
+
+if __name__ == "__main__":
+    main()
