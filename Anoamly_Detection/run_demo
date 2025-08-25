@@ -1,0 +1,52 @@
+#!/usr/bin/env python3
+"""
+Cycle Time Anomaly Detection Demo Runner
+
+Quick demo script to showcase the anomaly detection system for manufacturing processes.
+"""
+
+import sys
+import os
+from analyzer import AnomalyDetectionAnalyzer
+
+
+def main():
+    """Run the anomaly detection demo"""
+    print("🎯 Cycle Time Anomaly Detection Demo")
+    print("=" * 50)
+    print("This demo showcases advanced machine learning algorithms")
+    print("for detecting anomalies in manufacturing cycle time data.")
+    print()
+
+    try:
+        # Initialize analyzer
+        analyzer = AnomalyDetectionAnalyzer()
+
+        # Run complete demo
+        results = analyzer.run_demo_analysis(save_results=True)
+
+        print("\n" + "=" * 50)
+        print("🎉 Demo completed successfully!")
+        print("\n📊 Key Achievements:")
+        print("✓ Generated synthetic anomaly data")
+        print("✓ Applied multiple ML algorithms")
+        print("✓ Performed ensemble detection")
+        print("✓ Evaluated detection performance")
+        print("✓ Created comprehensive visualizations")
+        print("\n💡 This project demonstrates expertise in:")
+        print("• Unsupervised Machine Learning")
+        print("• Anomaly Detection Algorithms")
+        print("• Ensemble Learning Methods")
+        print("• Industrial IoT Analytics")
+        print("• Real-time Data Processing")
+        print("• Performance Evaluation")
+
+    except Exception as e:
+        print(f"❌ Error running demo: {str(e)}")
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()
+
+
