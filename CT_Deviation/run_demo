@@ -1,0 +1,51 @@
+#!/usr/bin/env python3
+"""
+Cycle Time Deviation Analysis Demo Runner
+
+Quick demo script to showcase advanced statistical analysis for manufacturing process optimization.
+"""
+
+import sys
+import os
+from analyzer import CTDeviationAnalyzer
+
+
+def main():
+    """Run the CT deviation analysis demo"""
+    print("🎯 Cycle Time Deviation Analysis Demo")
+    print("=" * 50)
+    print("This demo showcases advanced statistical analysis")
+    print("for manufacturing process optimization and quality control.")
+    print()
+
+    try:
+        # Initialize analyzer
+        analyzer = CTDeviationAnalyzer()
+
+        # Run complete demo
+        results = analyzer.run_demo_analysis(save_results=True)
+
+        print("\n" + "=" * 50)
+        print("🎉 Demo completed successfully!")
+        print("\n📊 Key Achievements:")
+        print("✓ Analyzed equipment performance metrics")
+        print("✓ Performed statistical deviation analysis")
+        print("✓ Conducted trend and pattern analysis")
+        print("✓ Created performance categorization")
+        print("✓ Generated comprehensive dashboards")
+        print("\n💡 This project demonstrates expertise in:")
+        print("• Advanced Statistical Analysis")
+        print("• Manufacturing Process Optimization")
+        print("• Performance Categorization")
+        print("• Trend Analysis & Forecasting")
+        print("• Statistical Process Control")
+        print("• Data-driven Decision Support")
+
+    except Exception as e:
+        print(f"❌ Error running demo: {str(e)}")
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()
+
