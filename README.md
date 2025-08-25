@@ -246,9 +246,9 @@ Interested in discussing:
 - **Career Opportunities**: Data science and ML engineering roles
 
 **Contact Information:**
-- 📧 Email: utku.gulbardak@example.com
-- 💼 LinkedIn: [linkedin.com/in/utkugulbardak](https://linkedin.com/in/utkugulbardak)
-- 💻 GitHub: [github.com/utkugulbardak](https://github.com/utkugulbardak)
+- 📧 Email: ugulbardak@gmail.com
+- 💼 LinkedIn: https://www.linkedin.com/in/utku-gulbardak-7511515a/
+- 💻 GitHub: https://github.com/UttyWotty
 
 ---
 
