@@ -1,0 +1,70 @@
+from __future__ import annotations
+
+import numpy as np
+import pandas as pd
+from typing import Optional
+
+
+def generate_master_shot_table_demo(
+    start_date: str = "2025-01-01",
+    days: int = 30,
+    suppliers: int = 5,
+    tools_per_supplier: int = 4,
+    tooling_families: int = 3,
+    seed: int = 42,
+) -> pd.DataFrame:
+    """
+    Create a synthetic MASTER_SHOT_TABLE-like dataframe for benchmarking.
+
+    Columns include the key fields used by the analyzer:
+    - SUPPLIER_NAME, COMPANY_ID, EQUIPMENT_CODE, MOLD_ID, TOOLING_FAMILY
+    - CT (cycle time), APPROVED_CT
+    - DAY (int yyyymmdd) for time segmentation
+
+    TODO: Add richer schema patterns to simulate different supplier behaviors.
+    """
+    rng = np.random.default_rng(seed)
+    base = pd.to_datetime(start_date)
+    days_idx = pd.date_range(base, periods=days, freq="D")
+
+    family_labels = [f"FAMILY_{i + 1}" for i in range(tooling_families)]
+
+    rows = []
+    for s in range(suppliers):
+        supplier_name = f"SUPPLIER_{s + 1}"
+        company_id = f"C{s + 1:03d}"
+
+        for t in range(tools_per_supplier):
+            equipment_code = f"TOOL_{s + 1:02d}_{t + 1:02d}"
+            mold_id = f"MOLD_{s + 1:02d}_{t + 1:02d}"
+            family = family_labels[(s + t) % tooling_families]
+
+            # Per-tool baseline approved CT with some variance
+            approved_ct = max(5.0, float(rng.normal(20, 4)))
+
+            # Tool-specific performance bias (some tools faster, some slower)
+            tool_bias = float(rng.normal(0, 1.2))
+
+            for d in days_idx:
+                # shots per day
+                shots = int(rng.integers(200, 1500))
+                # actual CT with noise around approved + bias
+                drift = float(rng.normal(0, 1.5))
+                ct = max(
+                    2.0, approved_ct + tool_bias + drift + float(rng.normal(0, 0.8))
+                )
+
+                rows.append(
+                    {
+                        "SUPPLIER_NAME": supplier_name,
+                        "COMPANY_ID": company_id,
+                        "EQUIPMENT_CODE": equipment_code,
+                        "MOLD_ID": mold_id,
+                        "TOOLING_FAMILY": family,
+                        "CT": round(ct, 2),
+                        "APPROVED_CT": round(approved_ct, 2),
+                        "DAY": int(d.strftime("%Y%m%d")),
+                    }
+                )
+
+    return pd.DataFrame(rows)
