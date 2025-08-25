@@ -1,0 +1,42 @@
+from __future__ import annotations
+
+import os
+import pandas as pd
+
+from pipeline.generate_demo import generate_product_demo
+from analyzer import preprocess_data, process_session, summarize_session
+
+
+def main() -> None:
+    os.makedirs("data", exist_ok=True)
+
+    df = generate_product_demo(days=10, suppliers=3, equipment_per_supplier=4, seed=42)
+    df_prep = preprocess_data(df)
+    df_proc = df_prep.groupby(["EQUIPMENT_CODE", "SESSION_ID"], group_keys=False).apply(
+        process_session
+    )
+    session_summary = (
+        df_proc.groupby(["EQUIPMENT_CODE", "SESSION_ID"], group_keys=False)
+        .apply(summarize_session)
+        .reset_index(drop=True)
+    )
+
+    out_csv = os.path.join("data", "session_summary.csv")
+    session_summary.to_csv(out_csv, index=False)
+
+    # Minimal HTML report
+    html = session_summary.head(200).to_html(index=False)
+    with open(os.path.join("data", "product_session_report.html"), "w") as f:
+        f.write(
+            "<html><head><meta charset='utf-8'><title>Product Session Report</title></head><body>"
+        )
+        f.write("<h1>Product Session Report (Demo)</h1>")
+        f.write(html)
+        f.write("</body></html>")
+
+    print("✅ Product analysis demo complete!")
+    print(f"Saved: {out_csv} and data/product_session_report.html")
+
+
+if __name__ == "__main__":
+    main()
