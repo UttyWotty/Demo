@@ -1,0 +1,77 @@
+{
+  "Day Friday": {
+    "target": "Day Friday",
+    "type": "Day",
+    "whys": [
+      "Performance shows 5.9% CT issues and avg CT 24.1s",
+      "Specific hours/days/tools show higher variation",
+      "Operating parameters vary outside of optimal ranges",
+      "Procedures and training differ across shifts",
+      "Systematic process and maintenance controls need improvement"
+    ],
+    "root_cause": "Operational variability due to non-standardized procedures",
+    "supporting_data": {
+      "avg_ct": 24.130907463508677,
+      "efficiency_pct": 85.83271394858885,
+      "issue_rate_pct": 5.8523822638391625,
+      "samples": 7262
+    },
+    "recommendations": [
+      "Standardize operating procedures",
+      "Implement shift-aligned training",
+      "Tune process parameters and monitor",
+      "Plan preventive maintenance on worst tools",
+      "Establish daily performance review"
+    ]
+  },
+  "Day Monday": {
+    "target": "Day Monday",
+    "type": "Day",
+    "whys": [
+      "Performance shows 5.6% CT issues and avg CT 24.2s",
+      "Specific hours/days/tools show higher variation",
+      "Operating parameters vary outside of optimal ranges",
+      "Procedures and training differ across shifts",
+      "Systematic process and maintenance controls need improvement"
+    ],
+    "root_cause": "Operational variability due to non-standardized procedures",
+    "supporting_data": {
+      "avg_ct": 24.206714522363335,
+      "efficiency_pct": 85.66195756425036,
+      "issue_rate_pct": 5.6184428492545555,
+      "samples": 7244
+    },
+    "recommendations": [
+      "Standardize operating procedures",
+      "Implement shift-aligned training",
+      "Tune process parameters and monitor",
+      "Plan preventive maintenance on worst tools",
+      "Establish daily performance review"
+    ]
+  },
+  "Day Sunday": {
+    "target": "Day Sunday",
+    "type": "Day",
+    "whys": [
+      "Performance shows 5.4% CT issues and avg CT 21.1s",
+      "Specific hours/days/tools show higher variation",
+      "Operating parameters vary outside of optimal ranges",
+      "Procedures and training differ across shifts",
+      "Systematic process and maintenance controls need improvement"
+    ],
+    "root_cause": "Operational variability due to non-standardized procedures",
+    "supporting_data": {
+      "avg_ct": 21.078240640260443,
+      "efficiency_pct": 95.84837352962407,
+      "issue_rate_pct": 5.385241454150841,
+      "samples": 7372
+    },
+    "recommendations": [
+      "Standardize operating procedures",
+      "Implement shift-aligned training",
+      "Tune process parameters and monitor",
+      "Plan preventive maintenance on worst tools",
+      "Establish daily performance review"
+    ]
+  }
+}
