@@ -2,6 +2,11 @@
 
 Welcome to Utku Gulbardak's comprehensive data science and machine learning engineering portfolio. This collection showcases advanced analytics projects, enterprise data engineering solutions, and industrial IoT applications with real-world impact.
 
+
+# 🎯 Data Science & ML Engineering Portfolio
+
+Welcome to Utku Gulbardak's comprehensive data science and machine learning engineering portfolio. This collection showcases advanced analytics projects, enterprise data engineering solutions, and industrial IoT applications with real-world impact.
+
 ## 📋 Portfolio Overview
 
 This portfolio demonstrates expertise across multiple domains:
@@ -44,6 +49,17 @@ demo/
 ├── portfolio.html                      # 📊 Comprehensive portfolio showcase
 ├── resume.html                         # 📄 Technical resume
 ├── README.md                          # 📖 This overview
+│
+├── production_mcp_demo/               # 🏭 Production Analytics Platform ⭐ NEW
+│   ├── README.md                      # Full documentation
+│   ├── QUICK_START.md                # Quick start guide
+│   ├── requirements.txt               # All dependencies
+│   ├── demo_mcp_server.py            # FastAPI backend (8 REST + WebSocket)
+│   ├── demo_dashboard.py             # Production Analytics Dashboard
+│   ├── demo_roi_analyzer.py          # ROI & Cycle Time Analyzer
+│   ├── demo_capacity_analyzer.py     # OEE & Capacity Risk Analyzer
+│   ├── test_api.py                   # API testing suite
+│   └── assets/                       # Screenshots folder
 │
 ├── lstm_classification_demo/           # 🧠 Deep Learning Project
 │   ├── README.md                      # Project documentation
@@ -94,6 +110,17 @@ demo/
 ```
 
 ## 🎯 Featured Projects
+
+### 🏭 Production Analytics Platform (NEW) ⭐
+- **Technology**: FastAPI, Streamlit, WebSocket, RESTful API, Plotly, AI Integration (AWS Bedrock)
+- **Components**:
+  - MCP Server (FastAPI): Multi-module API with 8 REST endpoints + WebSocket
+  - Production Dashboard: Real-time KPIs, timeline analysis, equipment comparison
+  - ROI Analyzer: Cycle time efficiency, time savings/losses, financial ROI
+  - Capacity Analyzer: OEE calculation, session analysis, production losses
+- **Achievement**: Enterprise-grade full-stack analytics platform with AI-ready architecture
+- **Impact**: Processes 50M+ daily records for Fortune 500 automotive clients
+- **Features**: 3 interactive dashboards, multi-module analytics, real-time streaming, LLM integration
 
 ### 🧠 LSTM Production Pattern Classification
 - **Technology**: PyTorch, Deep Learning, Time-Series Analysis
@@ -247,10 +274,11 @@ Interested in discussing:
 
 **Contact Information:**
 - 📧 Email: ugulbardak@gmail.com
-- 💼 LinkedIn: https://www.linkedin.com/in/utku-gulbardak-7511515a/
-- 💻 GitHub: https://github.com/UttyWotty
+- 💼 LinkedIn: [linkedin.com/in/utkugulbardak](https://www.linkedin.com/in/utku-gulbardak-7511515a/)
+- 💻 GitHub: [github.com/utkugulbardak](https://github.com/UttyWotty)
 
 ---
 
 *This portfolio demonstrates comprehensive expertise in data science, machine learning engineering, and industrial analytics with proven business impact and technical excellence.*
+
 
