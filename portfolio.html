@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utku Gulbardak - Data Science & ML Engineering Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            padding: 40px 0;
+        }
+        
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header .subtitle {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .header .description {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.8;
+        }
+        
+        .skills-overview {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+        }
+        
+        .skill-category li {
+            padding: 3px 0;
+            color: #666;
+        }
+        
+        .projects-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .project-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .project-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            color: white;
+        }
+        
+        .project-card h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        .project-card .description {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .tech-tag {
+            background: #e9ecef;
+            color: #495057;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #5a67d8, #6b46c1);
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #495057;
+            border: 1px solid #dee2e6;
+        }
+        
+        .btn-secondary:hover {
+            background: #e9ecef;
+        }
+        
+        .stats-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .contact-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+        }
+        
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>Utku Gulbardak</h1>
+            <div class="subtitle">Data Scientist & ML/AI Engineer</div>
+            <div class="description">
+                Experienced data scientist specializing in manufacturing analytics, machine learning, and enterprise data engineering. 
+                Proven track record in developing end-to-end AI solutions for industrial IoT applications and process optimization.
+            </div>
+        </header>
+
+        <!-- Skills Overview -->
+        <section class="skills-overview">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>🧠 Machine Learning & AI</h3>
+                    <ul>
+                        <li>Deep Learning (PyTorch, TensorFlow)</li>
+                        <li>LSTM & Time-Series Analysis</li>
+                        <li>Anomaly Detection</li>
+                        <li>Classification & Regression</li>
+                        <li>Ensemble Methods</li>
+                        <li>Computer Vision</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>🔧 Data Engineering</h3>
+                    <ul>
+                        <li>Snowflake & Cloud Data Warehousing</li>
+                        <li>ETL/ELT Pipeline Development</li>
+                        <li>Apache Spark & Distributed Computing</li>
+                        <li>Real-time Data Processing</li>
+                        <li>Database Design & Optimization</li>
+                        <li>Docker & Containerization</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>📊 Analytics & Visualization</h3>
+                    <ul>
+                        <li>Statistical Analysis & Modeling</li>
+                        <li>A/B Testing & Experimentation</li>
+                        <li>Business Intelligence</li>
+                        <li>Interactive Dashboards</li>
+                        <li>Plotly, Matplotlib, Seaborn</li>
+                        <li>Streamlit & Dash Applications</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>💻 Programming & Tools</h3>
+                    <ul>
+                        <li>Python (pandas, numpy, scikit-learn)</li>
+                        <li>SQL & Advanced Querying</li>
+                        <li>Git & Version Control</li>
+                        <li>FastAPI & Web Development</li>
+                        <li>CI/CD & DevOps</li>
+                        <li>AWS & Cloud Platforms</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Statistics -->
+        <section class="stats-section">
+            <h2 class="section-title">Portfolio Impact</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">ML Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50M+</div>
+                    <div class="stat-label">Records Processed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">$2.3M</div>
+                    <div class="stat-label">Cost Savings Generated</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Pipeline Reliability</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Industries Served</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Model Accuracy</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects-section">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <!-- Production Analytics Platform - NEW -->
+                <div class="project-card" style="border: 3px solid #28a745; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+                    <div class="project-icon" style="background: linear-gradient(135deg, #28a745, #20c997);">🏭</div>
+                    <h3>Production Analytics Platform (Full-Stack) ⭐ NEW</h3>
+                    <div class="description">
+                        <strong>Enterprise-grade full-stack analytics platform</strong> featuring FastAPI MCP server, 
+                        3 interactive Streamlit dashboards (Production Timeline, ROI Analyzer, Capacity/OEE Risk), 
+                        and AI-ready architecture. Processes 50M+ daily records for Fortune 500 automotive clients 
+                        with real-time WebSocket streaming and multi-module analytics.
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">WebSocket</span>
+                        <span class="tech-tag">Plotly</span>
+                        <span class="tech-tag">REST API</span>
+                        <span class="tech-tag">AWS Bedrock</span>
+                        <span class="tech-tag">LLM Integration</span>
+                        <span class="tech-tag">OEE Analysis</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="production_mcp_demo/README.md" class="btn btn-primary">View Demo</a>
+                        <a href="production_mcp_demo/QUICK_START.md" class="btn btn-secondary">Quick Start</a>
+                    </div>
+                </div>
+                
+                <!-- LSTM Classification Project -->
+                <div class="project-card">
+                    <div class="project-icon">🧠</div>
+                    <h3>LSTM Production Pattern Classification</h3>
+                    <div class="description">
+                        Advanced deep learning system using LSTM neural networks for classifying production patterns 
+                        in injection molding operations. Implements time-series sequence processing with multi-class 
+                        classification achieving 92.6% accuracy.
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">Deep Learning</span>
+                        <span class="tech-tag">Time Series</span>
+                        <span class="tech-tag">LSTM</span>
+                        <span class="tech-tag">SMOTE</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="lstm_classification_demo/README.md" class="btn btn-primary">View Demo</a>
+                        <a href="lstm_classification_demo/run_demo.py" class="btn btn-secondary">Run Code</a>
+                    </div>
+                </div>
+
+                <!-- Anomaly Detection Project -->
+                <div class="project-card">
+                    <div class="project-icon">🔍</div>
+                    <h3>Cycle Time Anomaly Detection</h3>
+                    <div class="description">
+                        Multi-algorithm anomaly detection system for manufacturing cycle time analysis. Combines 
+                        Isolation Forest, LOF, and statistical methods with ensemble learning for robust 
+                        real-time anomaly detection in IoT sensor data.
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Scikit-learn</span>
+                        <span class="tech-tag">Isolation Forest</span>
+                        <span class="tech-tag">Ensemble Learning</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="anomaly_detection_demo/README.md" class="btn btn-primary">View Demo</a>
+                        <a href="anomaly_detection_demo/run_demo.py" class="btn btn-secondary">Run Code</a>
+                    </div>
+                </div>
+
+                <!-- Data Pipeline Project -->
+                <div class="project-card">
+                    <div class="project-icon">⚙️</div>
+                    <h3>Enterprise Data Pipeline Engineering</h3>
+                    <div class="description">
+                        Scalable data engineering platform processing 50M+ manufacturing records daily. 
+                        Features chunked processing, parallel execution, and real-time data quality monitoring 
+                        with 99.9% pipeline reliability.
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Snowflake</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">ETL</span>
+                        <span class="tech-tag">Parallel Processing</span>
+                        <span class="tech-tag">Data Quality</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="data_pipeline_demo/README.md" class="btn btn-primary">View Demo</a>
+                        <a href="data_pipeline_demo/run_demo.py" class="btn btn-secondary">Run Code</a>
+                    </div>
+                </div>
+
+                <!-- CT Deviation Analysis -->
+                <div class="project-card">
+                    <div class="project-icon">📊</div>
+                    <h3>Statistical Process Control & Deviation Analysis</h3>
+                    <div class="description">
+                        Comprehensive statistical analysis system for cycle time deviation analysis. Features 
+                        performance categorization, trend analysis, and statistical process control with 
+                        automated reporting and visualization.
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Statistical Analysis</span>
+                        <span class="tech-tag">SPC</span>
+                        <span class="tech-tag">Trend Analysis</span>
+                        <span class="tech-tag">Performance Metrics</span>
+                        <span class="tech-tag">Visualization</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="ct_deviation_demo/README.md" class="btn btn-primary">View Demo</a>
+                        <a href="ct_deviation_demo/run_demo.py" class="btn btn-secondary">Run Code</a>
+                    </div>
+                </div>
+
+                <!-- ROI Analysis -->
+                <div class="project-card">
+                    <div class="project-icon">💰</div>
+                    <h3>ROI Analysis & Financial Optimization</h3>
+                    <div class="description">
+                        Advanced financial analysis system calculating ROI impact and optimization recommendations 
+                        for manufacturing operations. Includes cost-benefit analysis, efficiency scoring, and 
+                        automated action recommendations.
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Financial Modeling</span>
+                        <span class="tech-tag">ROI Analysis</span>
+                        <span class="tech-tag">Cost Optimization</span>
+                        <span class="tech-tag">Business Intelligence</span>
+                        <span class="tech-tag">Dashboards</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="roi_demo/readme.md" class="btn btn-primary">View Demo</a>
+                        <a href="roi_demo/" class="btn btn-secondary">Explore</a>
+                    </div>
+                </div>
+
+                <!-- Root Cause Analysis -->
+                <div class="project-card">
+                    <div class="project-icon">🔬</div>
+                    <h3>Advanced Root Cause Analysis</h3>
+                    <div class="description">
+                        Intelligent root cause analysis system combining Pareto analysis, statistical methods, 
+                        and machine learning for automated problem identification and resolution recommendations 
+                        in manufacturing processes.
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Pareto Analysis</span>
+                        <span class="tech-tag">Statistical Analysis</span>
+                        <span class="tech-tag">ML Classification</span>
+                        <span class="tech-tag">Five Whys</span>
+                        <span class="tech-tag">Automated Insights</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="rca_demo/README.md" class="btn btn-primary">View Demo</a>
+                        <a href="rca_demo/run_demo.py" class="btn btn-secondary">Run Code</a>
+                    </div>
+                </div>
+
+                <!-- Product Analysis -->
+                <div class="project-card">
+                    <div class="project-icon">📈</div>
+                    <h3>Product Performance Analytics</h3>
+                    <div class="description">
+                        Comprehensive product analysis platform for manufacturing performance tracking. 
+                        Features session analysis, daily reporting, and performance optimization with 
+                        interactive dashboards and automated insights.
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Product Analytics</span>
+                        <span class="tech-tag">Performance Tracking</span>
+                        <span class="tech-tag">Session Analysis</span>
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">Interactive Dashboards</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="product_analysis_demo/README.md" class="btn btn-primary">View Demo</a>
+                        <a href="product_analysis_demo/run_demo.py" class="btn btn-secondary">Run Code</a>
+                    </div>
+                </div>
+
+                <!-- CT Efficiency Benchmarking -->
+                <div class="project-card">
+                    <div class="project-icon">⚡</div>
+                    <h3>Manufacturing Efficiency Benchmarking</h3>
+                    <div class="description">
+                        Advanced benchmarking system for manufacturing efficiency analysis. Features supplier 
+                        comparison, tier ranking, and comprehensive efficiency metrics with statistical 
+                        analysis and performance optimization recommendations.
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Benchmarking</span>
+                        <span class="tech-tag">Efficiency Analysis</span>
+                        <span class="tech-tag">Supplier Ranking</span>
+                        <span class="tech-tag">Performance Metrics</span>
+                        <span class="tech-tag">Statistical Modeling</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="ct_efficiency_demo/README.md" class="btn btn-primary">View Demo</a>
+                        <a href="ct_efficiency_demo/run_demo.py" class="btn btn-secondary">Run Code</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <h2 class="section-title">Get In Touch</h2>
+            <p>Interested in discussing data science opportunities or collaboration?</p>
+            <div class="contact-info">
+                <a href="mailto:utku.gulbardak@example.com">📧 Email</a>
+                <a href="https://linkedin.com/in/utkugulbardak">💼 LinkedIn</a>
+                <a href="https://github.com/utkugulbardak">💻 GitHub</a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+
+
+
+
