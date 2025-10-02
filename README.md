@@ -3,9 +3,6 @@
 Welcome to Utku Gulbardak's comprehensive data science and machine learning engineering portfolio. This collection showcases advanced analytics projects, enterprise data engineering solutions, and industrial IoT applications with real-world impact.
 
 
-# 🎯 Data Science & ML Engineering Portfolio
-
-Welcome to Utku Gulbardak's comprehensive data science and machine learning engineering portfolio. This collection showcases advanced analytics projects, enterprise data engineering solutions, and industrial IoT applications with real-world impact.
 
 ## 📋 Portfolio Overview
 
